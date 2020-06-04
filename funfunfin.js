@@ -132,13 +132,14 @@ finance.operations.transfer(ITAU, NU, 50.00);
 finance.operations.add('-', NU, 10.00);        // candy
 finance.operations.add('-', NU, 30.00);        // beer
 
-finance.operations.transfer(ITAU, TD, 2000);   // investing
+finance.operations.transfer(ITAU, TD, 200);   // investing
 
+finance.operations.commit();
 
 // # ---- summary ###################################################################### 
 
-console.log(finance.accounts);
-//console.log(finance.project()); // takes into calculation future inputs
+//console.log(finance.accounts); // takes into calculation only commited inputs
+console.log(finance.project()); // takes into calculation future inputs
 
 console.log("Total:", finance.total(_total));
 console.log("Total investido:", finance.total(_investimento));
